@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block page_styles %}
+<link rel="stylesheet" href="../static/home.css">
+{% endblock %}
+
+
+{% block content %}
+<nav  class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a id="abar" class="nav-link " href="{{ url_for('main.index') }}">Home</a>
+            </li>
+            {% if current_user.is_authenticated %}
+            <li  class="nav-item">
+              <a  id="abar" class="nav-link " href="{{ url_for('dashapp_b1_name.dash_app1') }}">Dashboard 1</a>
+            </li>
+            <li  class="nav-item">
+                <a id="abar" class="nav-link" href="{{ url_for('dashapp_b2_name.dash_app2') }}">Dashboard 2</a>
+            </li>
+            <li  class="nav-item">
+                <a id="abar" class="nav-link " href="{{ url_for('dashapp_b3_name.dash_app3') }}">Dashboard 3</a>
+            </li>
+            <li  class="nav-item">
+                <a id="abar" class="nav-link " href='/dash/dash_app_1/'>Dashboard 4</a>
+            </li>
+            {% endif %}
+        </ul>
+
+    </div>
+
+    <div class="mx-auto order-0">
+        <a id="abar2" class="navbar-brand mx-auto">INTELLIGENT FLEET</a>
+    </div>
+
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+        {% if current_user.is_authenticated %}
+            <li class="nav-link"><a id="abar" class="nav-link" href="{{ url_for('main2.logout') }}">Logout</a></li>
+        {% else %}
+            <li class="nav-link"><a id="abar" class="nav-link active" href="{{ url_for('main3.login') }}">Log in</a></li>
+            <li class="nav-link"><a id="abar"  class="nav-link" href="{{ url_for('main4.register') }}">Register</a></li>
+        {% endif %}
+        </ul>
+    </div>
+
+</nav>
+
+<form method="post">
+    <div class="form-group" id="logdiv">
+    {{ form.hidden_tag() }}
+    {{ form.email.label }}{{ form.email(class="form-control", placeholder="Enter email") }}
+    {{ form.password.label }}{{ form.password(class="form-control", placeholder="Password") }}
+    {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}

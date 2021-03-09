@@ -1,0 +1,28 @@
+
+body {
+  background: url('./img/im1.jpg') no-repeat center center fixed ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+#abar{
+font-variant: small-caps;
+font-size: 120%;
+}
+
+#abar2{
+color:black;
+font-variant: small-caps;
+font-size: 170%;
+}
+
+#abar:hover{
+color:rgb(230,230,230);
+font-variant: small-caps;
+}
+
+

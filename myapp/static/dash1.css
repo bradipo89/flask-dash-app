@@ -1,0 +1,20 @@
+body
+{
+overflow: hidden;
+}
+
+#abar{
+font-variant: small-caps;
+font-size: 120%;
+}
+
+#abar2{
+color:black;
+font-variant: small-caps;
+font-size: 170%;
+}
+
+#abar:hover{
+color:rgb(230,230,230);
+font-variant: small-caps;
+}
